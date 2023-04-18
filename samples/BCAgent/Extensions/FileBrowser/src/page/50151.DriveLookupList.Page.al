@@ -3,7 +3,7 @@
 // Licensed under the MIT License. See License.txt in the project root for license information. 
 // ------------------------------------------------------------------------------------------------
 
-page 50151 DriveLookupList
+page 50151 "DriveLookupList"
 {
     Editable = false;
     PageType = List;
@@ -17,7 +17,7 @@ page 50151 DriveLookupList
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                 }
