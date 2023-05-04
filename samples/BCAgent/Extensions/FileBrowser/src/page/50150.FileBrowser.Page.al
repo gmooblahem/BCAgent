@@ -3,7 +3,7 @@
 // Licensed under the MIT License. See License.txt in the project root for license information. 
 // ------------------------------------------------------------------------------------------------
 
-page 50150 FileBrowser
+page 50150 "FileBrowser"
 {
     PageType = Worksheet;
     SourceTable = DirectoryItems;
@@ -28,7 +28,7 @@ page 50150 FileBrowser
                 ApplicationArea = All;
                 Lookup = true;
                 Caption = 'Drive';
-
+                ToolTip = 'Specifies the value of the Drive field.';
                 trigger OnLookup(var Text: Text): Boolean;
                 var
                     Drives: record Drives temporary;
@@ -47,6 +47,7 @@ page 50150 FileBrowser
             {
                 ApplicationArea = All;
                 Caption = 'Directory';
+                ToolTip = 'Specifies the value of the Directory field.';
             }
             repeater(DirectoryItemsList)
             {
@@ -55,7 +56,7 @@ page 50150 FileBrowser
                     ApplicationArea = All;
 
                     DrillDown = true;
-
+                    ToolTip = 'Specifies the value of the DisplayName field.';
                     trigger OnDrillDown()
                     begin
                         if Rec.IsDirectory then begin
@@ -67,7 +68,23 @@ page 50150 FileBrowser
                 field(Created; Created)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Created field.';
                 }
+            }
+        }
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action(TextFileFilter)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Executes the TextFileFilter action.';
+                trigger OnAction()
+                begin
+
+                end;
             }
         }
     }

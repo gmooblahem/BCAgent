@@ -3,7 +3,7 @@
 // Licensed under the MIT License. See License.txt in the project root for license information. 
 // ------------------------------------------------------------------------------------------------
 
-pageextension 50144 CustListExt extends "Customer List"
+pageextension 50144 "CustListExt" extends "Customer List"
 {
     actions
     {
@@ -28,6 +28,6 @@ pageextension 50144 CustListExt extends "Customer List"
     var
         Calculator: codeunit Calculator;
     begin
-        Message('2 + 2 = %1', Calculator.Add(2, 2));
+        //Message('2 + 2 = %1', Calculator.Add(2, 2));
     end;
 }
